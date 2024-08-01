@@ -7,21 +7,16 @@ import port3 from './port3.png'
 export default function () {
 
 
-    function Display(e){
-        let item=document.querySelector('.lightBox');
-        let itemImg=document.querySelectorAll('.itemImg');
-        console.log();
-        // let lightImg=document.querySelector('.lightImg')
-        // for(let i=0;i<itemImg.length;i++){
-        //     let newSrc=itemImg[i].getAttribute('src')
-        //     lightImg.setAttribute('src')
-        // }
-        
-        // item.classList.remove('hidden')
-        // item.classList.add('flex');
+    function showDetails(e) {
+        const holder = e.currentTarget;
+        const image = holder.querySelector('img');
+        document.querySelector('.lightBox').classList.remove('hidden');
+        document.querySelector('.lightBox img').src = image.src;
+    }
 
-        
-
+    function hideDetails(e) {
+        const element = e.currentTarget;
+        element.classList.add('hidden');
     }
     
   return (
@@ -40,7 +35,7 @@ export default function () {
                 <div className="inner mt-12 px-6 w-1/3">
                     <div className="relative">
                         <img src={port1} className='itemImg rounded-md' alt="" />
-                        <div onClick={Display} className='cursor-pointer group transition-all duration-500 flex justify-center items-center absolute inset-y-0 inset-x-0 rounded-md hover:bg-[#1abc9ce6] '>
+                        <div onClick={showDetails} className='cursor-pointer group transition-all duration-500 flex justify-center items-center absolute inset-y-0 inset-x-0 rounded-md hover:bg-[#1abc9ce6] '>
                             <i className='text-transparent transition-all duration-500 group-hover:text-white fas fa-plus fa-6x'></i>
                         </div>
                     </div>
@@ -48,7 +43,7 @@ export default function () {
                 <div className="inner mt-12 px-6 w-1/3">
                     <div className="relative">
                         <img src={port2} className='itemImg rounded-md' alt="" />
-                        <div onClick={Display} className='cursor-pointer group transition-all duration-500 flex justify-center items-center absolute inset-y-0 inset-x-0 rounded-md hover:bg-[#1abc9ce6] '>
+                        <div onClick={showDetails} className='cursor-pointer group transition-all duration-500 flex justify-center items-center absolute inset-y-0 inset-x-0 rounded-md hover:bg-[#1abc9ce6] '>
                             <i className='text-transparent transition-all duration-500 group-hover:text-white fas fa-plus fa-6x'></i>
                         </div>
                     </div>
@@ -56,7 +51,7 @@ export default function () {
                 <div className="inner mt-12 px-6 w-1/3">
                     <div className="relative">
                         <img src={port3} className='itemImg rounded-md' alt="" />
-                        <div onClick={Display} className='cursor-pointer group transition-all duration-500 flex justify-center items-center absolute inset-y-0 inset-x-0 rounded-md hover:bg-[#1abc9ce6] '>
+                        <div onClick={showDetails} className='cursor-pointer group transition-all duration-500 flex justify-center items-center absolute inset-y-0 inset-x-0 rounded-md hover:bg-[#1abc9ce6] '>
                             <i className='text-transparent transition-all duration-500 group-hover:text-white fas fa-plus fa-6x'></i>
                         </div>
                     </div>
@@ -64,7 +59,7 @@ export default function () {
                 <div className="inner mt-12 px-6 w-1/3">
                     <div className="relative">
                         <img src={port1} className='itemImg rounded-md' alt="" />
-                        <div onClick={Display} className='cursor-pointer group transition-all duration-500 flex justify-center items-center absolute inset-y-0 inset-x-0 rounded-md hover:bg-[#1abc9ce6] '>
+                        <div onClick={showDetails} className='cursor-pointer group transition-all duration-500 flex justify-center items-center absolute inset-y-0 inset-x-0 rounded-md hover:bg-[#1abc9ce6] '>
                             <i className='text-transparent transition-all duration-500 group-hover:text-white fas fa-plus fa-6x'></i>
                         </div>
                     </div>
@@ -72,7 +67,7 @@ export default function () {
                 <div className="inner mt-12 px-6 w-1/3">
                     <div className="relative">
                         <img src={port2} className='itemImg rounded-md' alt="" />
-                        <div onClick={Display} className='cursor-pointer group transition-all duration-500 flex justify-center items-center absolute inset-y-0 inset-x-0 rounded-md hover:bg-[#1abc9ce6] '>
+                        <div onClick={showDetails} className='cursor-pointer group transition-all duration-500 flex justify-center items-center absolute inset-y-0 inset-x-0 rounded-md hover:bg-[#1abc9ce6] '>
                             <i className='text-transparent transition-all duration-500 group-hover:text-white fas fa-plus fa-6x'></i>
                         </div>
                     </div>
@@ -80,7 +75,7 @@ export default function () {
                 <div className="inner mt-12 px-6 w-1/3">
                     <div className="relative">
                         <img src={port3} className='itemImg rounded-md' alt="" />
-                        <div   onClick={Display}className=' cursor-pointer group transition-all duration-500 flex justify-center items-center absolute inset-y-0 inset-x-0 rounded-md hover:bg-[#1abc9ce6] '>
+                        <div   onClick={showDetails}className=' cursor-pointer group transition-all duration-500 flex justify-center items-center absolute inset-y-0 inset-x-0 rounded-md hover:bg-[#1abc9ce6] '>
                             <i className='text-transparent transition-all duration-500 group-hover:text-white fas fa-plus fa-6x'></i>
                         </div>
                     </div>
@@ -89,7 +84,7 @@ export default function () {
         </div>
     </div>
     
-    <div className="lightBox hidden justify-center items-center fixed inset-y-0 inset-x-0 bg-[#0d6efd40]">
+    <div onClick={hideDetails} className="lightBox hidden justify-center items-center fixed inset-y-0 inset-x-0 bg-[#0d6efd40]">
         <img src={port1} className='lightImg w-1/3 h-1/2' alt="" />
     </div>
     
